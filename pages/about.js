@@ -5,7 +5,6 @@ import Box from '@material-ui/core/Box';
 import MuiLink from '@material-ui/core/Link';
 import ProTip from '../components/ProTip';
 import Link from '../components/Link';
-import Dashboard from '../components/Dashboard';
 
 function MadeWithLove() {
   return (
@@ -19,6 +18,17 @@ function MadeWithLove() {
   );
 }
 
-export default function Index() {
-  return <Dashboard />;
+export default function About() {
+  return (
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Next.js v4-beta example
+        </Typography>
+        <Link href="/">Go to the main page</Link>
+        <ProTip />
+        <MadeWithLove />
+      </Box>
+    </Container>
+  );
 }
