@@ -16,7 +16,9 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "latest",
     "react-jss": "latest",
+    "history": "latest",
     "clsx": "latest"
   },
   "devDependencies": {

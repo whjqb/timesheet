@@ -6,6 +6,9 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
+import TimerIcon from '@material-ui/icons/Timer';
+import MoneyIcon from '@material-ui/icons/Money';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
@@ -20,15 +23,36 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <TimerIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Timesheet" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <AttachMoneyIcon />
+      </ListItemIcon>
+      <ListItemText primary="Invoices" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Customers" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <MoneyIcon />
+      </ListItemIcon>
+      <ListItemText primary="Rates" />
+    </ListItem>
+
+
+{/*
+      <ListItem button>
+      <ListItemIcon>
+        <ShoppingCartIcon />
+      </ListItemIcon>
+      <ListItemText primary="Orders" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
@@ -42,6 +66,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Integrations" />
     </ListItem>
+*/}
   </div>
 );
 

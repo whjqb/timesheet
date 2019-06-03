@@ -1,24 +1,80 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import MuiLink from '@material-ui/core/Link';
-import ProTip from '../components/ProTip';
-import Link from '../components/Link';
-import Dashboard from '../components/Dashboard';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-function MadeWithLove() {
+function BasicExample() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Built with love by the '}
-      <MuiLink color="inherit" href="https://material-ui.com/">
-        Material-UI
-      </MuiLink>
-      {' team.'}
-    </Typography>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+      </div>
+    </Router>
   );
 }
 
-export default function Index() {
-  return <Dashboard />;
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+    </div>
+  );
 }
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Topics({ match }) {
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/components`}>Components</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+        </li>
+      </ul>
+
+      <Route path={`${match.path}/:topicId`} component={Topic} />
+      <Route
+        exact
+        path={match.path}
+        render={() => <h3>Please select a topic.</h3>}
+      />
+    </div>
+  );
+}
+
+function Topic({ match }) {
+  return (
+    <div>
+      <h3>{match.params.topicId}</h3>
+    </div>
+  );
+}
+
+export default BasicExample;
